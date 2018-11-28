@@ -1,0 +1,3 @@
+cron_flags=-J 60
+sendmail_enable=NONE
+syslogd_flags=-ss
