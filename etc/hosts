@@ -1,4 +1,0 @@
-::1             localhost localhost.my.domain
-127.0.0.1       localhost localhost.my.domain
-10.88.9.40      cdn cdn.iniquity.io
-10.88.9.45      pkg pkg.iniquity.io
