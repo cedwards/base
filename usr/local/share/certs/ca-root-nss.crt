@@ -5,7 +5,7 @@
 ##  Authorities (CA). These were automatically extracted from Mozilla's
 ##  root CA list (the file `certdata.txt').
 ##
-##  Extracted from nss-3.41.1
+##  Extracted from nss-3.42.1
 ##  with $FreeBSD: head/security/ca_root_nss/files/MAca-bundle.pl.in 325572 2013-08-29 08:10:09Z mandree $
 ##
 ##  Untrusted certificates omitted from this bundle: 2
