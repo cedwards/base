@@ -1,0 +1,15 @@
+bastille_test:
+  tags:
+    - bastille
+    - bastille-templates
+    - bastillebsd
+    - bastillebsd-templates
+  script:
+    - doas bastille version
+    - doas bastille create 120-gitlab-ci 12.0-RELEASE 10.17.89.10
+    - doas bastille create 121-gitlab-ci 12.1-RELEASE 10.17.89.20
+    - doas bastille start ALL
+    - doas bastille bootstrap https://gitlab.com/luminouspuma/base
+    - doas bastille template ALL luminouspuma/base
+    - doas bastille cmd ALL 'ps -auxw'
+    - doas bastille cmd ALL 'sockstat -4'
