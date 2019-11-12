@@ -1,2 +1,0 @@
-patch < /etc/login.conf.patch
-cap_mkdb /etc/login.conf
