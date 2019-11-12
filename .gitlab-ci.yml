@@ -1,9 +1,9 @@
 bastille_test:
   tags:
     - bastille
-    - bastille-templates
+    - bastille-template
     - bastillebsd
-    - bastillebsd-templates
+    - bastillebsd-template
   script:
     - doas bastille version
     - doas bastille create 120-gitlab-ci 12.0-RELEASE 10.17.89.10
