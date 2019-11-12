@@ -1,0 +1,33 @@
+bastille_test:
+  tags:
+    - bastille
+    - bastille-template
+    - bastillebsd
+    - bastillebsd-template
+  script:
+    - doas bastille version
+    - doas bastille create 11-3-gitlab-ci 11.3-RELEASE 10.17.89.113
+    - doas bastille create 12-0-gitlab-ci 12.0-RELEASE 10.17.89.120
+    - doas bastille create 12-1-gitlab-ci 12.1-RELEASE 10.17.89.121
+    - doas bastille start 11-3-gitlab-ci
+    - doas bastille start 12-0-gitlab-ci
+    - doas bastille start 12-1-gitlab-ci
+    - doas bastille bootstrap https://gitlab.com/luminouspuma/base
+    - doas bastille template 11-3-gitlab-ci luminouspuma/base
+    - doas bastille cmd 11-3-gitlab-ci 'freebsd-version'
+    - doas bastille cmd 11-3-gitlab-ci 'ps -auxw'
+    - doas bastille cmd 11-3-gitlab-ci 'sockstat -4'
+    - doas bastille template 12-0-gitlab-ci luminouspuma/base
+    - doas bastille cmd 12-0-gitlab-ci 'freebsd-version'
+    - doas bastille cmd 12-0-gitlab-ci 'ps -auxw'
+    - doas bastille cmd 12-0-gitlab-ci 'sockstat -4'
+    - doas bastille template 12-1-gitlab-ci luminouspuma/base
+    - doas bastille cmd 12-1-gitlab-ci 'freebsd-version'
+    - doas bastille cmd 12-1-gitlab-ci 'ps -auxw'
+    - doas bastille cmd 12-1-gitlab-ci 'sockstat -4'
+    - doas bastille stop 11-3-gitlab-ci
+    - doas bastille stop 12-0-gitlab-ci
+    - doas bastille stop 12-1-gitlab-ci
+    - doas bastille destroy 11-3-gitlab-ci
+    - doas bastille destroy 12-0-gitlab-ci
+    - doas bastille destroy 12-1-gitlab-ci
