@@ -1,7 +1,7 @@
 CP etc /
 CP root /
 CP usr /
-PKG vim git-lite htop tree ca_root_nss
+PKG vim git-lite htop tree ca_root_nss checkrestart
 SYSRC cron_flags=-J 60
 SYSRC sendmail_enable=NONE
 SYSRC syslogd_flags=-ss
